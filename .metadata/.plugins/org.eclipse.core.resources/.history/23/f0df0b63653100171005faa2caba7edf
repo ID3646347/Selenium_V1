@@ -1,0 +1,42 @@
+package com.adactin.testcases;
+
+import org.testing.Assert;
+import org.testing.annotations.Test;
+import com.adactin.pageclass.LoginPage;
+import com.adactin.pages.searchHotelPage;
+
+public class LoginPageTestCase extends Base {
+	
+	LoginPage loginPage;
+		SearchHotelPage searchHotelPage;
+
+@Test
+public void correctLogin(){
+	loginPage = new LoginPage();
+	loginPage.setTxtUsername("ID3646347");
+	loginPage.SetTxtPassword("January101979");
+	loginPage.clickBtnLogin();
+	searchHotelPage = new searchHotelPage();
+	Assert.assertEquals("Hello ID3646347!", searchHotelPage.get);
+}
+
+public void incorrectLogin(){
+	loginPage.openUrl("http://adactin.com/HotelApp/");
+	loginPage.setTxtUsername("ID3646347");
+	loginPage.SetTxtPassword("January101979");
+	loginPage.clickBtnLogin();
+	
+	Assert.assertEquals("Invalid Login Details", LoginPage.);
+}
+
+@Test
+public void emptyUsername(){
+	
+}
+
+@Test
+public void emptyPassword(){
+	
+}
+
+}

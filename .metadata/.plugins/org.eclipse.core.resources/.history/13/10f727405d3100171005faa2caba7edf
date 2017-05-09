@@ -1,0 +1,8 @@
+package com.adactin.pageclass;
+
+public class LoginPage extends OpenURL{
+	@FindBy(id="username")
+	private WebElement txtUserName;
+	
+
+}

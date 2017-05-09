@@ -1,0 +1,54 @@
+package com.adactin.testcases;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.adactin.pageclass.LoginPage;
+import com.adactin.pageclass.SearchHotelPage;
+
+
+public class LoginPageTestCase {
+	
+	LoginPage loginPage;
+	SearchHotelPage searchHotelPage;
+
+@Test
+public void correctLogin(){
+	loginPage = new LoginPage();
+	loginPage.setTxtUsername("ID3646347");
+	loginPage.setTxtPassword("January101979");
+	loginPage.clickBtnLogin();
+	searchHotelPage = new SearchHotelPage();
+	Assert.assertEquals("Hello ID3646347!", searchHotelPage.getTextWelcomeText());
+}
+//
+//@Test
+//public void incorrectLogin(){
+//	loginPage.openUrl("http://adactin.com/HotelApp/");
+//	loginPage.setTxtUsername("ID3646347");
+//	loginPage.setTxtPassword("January101979!");
+//	loginPage.clickBtnLogin();
+//	
+//	Assert.assertEquals("Invalid Login Details", loginPage.getLblIncorrectLogin());
+//}
+
+@Test
+public void emptyUsername(){
+	loginPage.openUrl("http://adactin.com/HotelApp/");
+	loginPage.setTxtUsername(" ");
+	loginPage.setTxtPassword("January101979");
+	loginPage.clickBtnLogin();
+	Assert.assertEquals("Invalid Login Details", loginPage.getLblIncorrectLogin());
+}
+//
+//@Test
+//public void emptyPassword(){
+//	loginPage.openUrl("http://adactin.com/HotelApp/");
+//	loginPage.setTxtUsername("ID3646347");
+//	loginPage.setTxtPassword("");
+//	loginPage.clickBtnLogin();
+//	Assert.assertEquals("Invalid Login Details", loginPage.getLblIncorrectLogin());
+//	
+//}
+
+}

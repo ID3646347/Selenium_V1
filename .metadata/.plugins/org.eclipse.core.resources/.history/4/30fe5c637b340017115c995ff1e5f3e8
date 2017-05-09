@@ -1,0 +1,30 @@
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+
+public class Windows_Handle {
+	static WebDriver driver;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.gecko.driver","C:/Users/admin/Downloads/geckodriver-v0.16.1-win64/geckodriver.exe");
+		driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		openUrl("https://www.online.citibank.co.in/?eOfferCode=INHOGNTTNHOME/");
+				
+			
+		//driver.findElement(By.id("Login")).Click;
+		
+
+	}
+	
+	public static void openUrl(String text){
+		driver.get(text);
+	}
+
+}

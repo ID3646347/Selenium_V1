@@ -1,0 +1,24 @@
+package com.adactin.pageclass;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
+public class SearchHotelPage extends Base {
+	
+	@FindBy(id="username_show")
+	private WebElement txtWelcomeText;
+	
+	public SearchHotelPage(){
+		PageFactory.initElements(driver, this);
+	}
+	
+	public String getTextWelcomeText(){
+		return txtWelcomeText.getAttribute("value");
+	}
+	
+	
+
+}

@@ -1,0 +1,6 @@
+package com.adactin.pageclass;
+
+public class OpenURL {
+	static WebDriver driver;
+
+}

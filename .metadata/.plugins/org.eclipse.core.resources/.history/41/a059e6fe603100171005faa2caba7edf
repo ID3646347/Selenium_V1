@@ -1,0 +1,20 @@
+package com.adactin.unittest;
+
+
+
+public class LoginPageTest {
+	@Test
+	public void txtUserNameText(){
+		LoginPage loginPage = new LoginPage;
+		loginpage.setTxtUserName("ID3646347");
+		Assert.assertEquals("ID3646347", loginpage.getTxtUsername);
+	}
+	
+	@Test
+	public void txtPasswordText(){
+		LoginPage loginPage = new LoginPage;
+		loginpage.setTxtPassword("January101979");
+		Assert.assertEquals("January101979", loginpage.getTxtPassword);
+	}
+
+}
